@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="form-group col-md-4">
+        <label for="inputCodigo">Id:</label>
+        <input type="text" placeholder="buscar" #id />
+      </div>
+    <button type="button" (click)="obtenerDisco(id.value)" class="btn btn-success mb-2">Buscar Disco</button>
+    <button type="button" (click)="obtenerDiscos()" class="btn btn-success mb-2">Mostrar todos los Discos</button>
+    <h1>Desde vista</h1>
+    <div *ngIf="discos == null && disco == null"> No hay ninguna lista de discos para mostrar...</div>
+    <div *ngIf= "discos != []">
+        <p *ngFor="let disco of discos">
+            {{disco.id}}
+            {{disco.titulo}}
+            {{disco.interprete}}
+            {{disco.anyoPublicacion}}
+        </p>
+    </div>
+    <p *ngIf="disco != null">
+        {{disco.titulo}}
+        {{disco.interprete}}
+        {{disco.anyoPublicacion}}
+    </p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+    <form>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputCiudad">Titulo:</label>
+            <input type="text" placeholder="titulo" #titulo />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPais">Interprete:</label>
+            <input type="text" placeholder="interprete" #interprete />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputCodigo">Año publicación:</label>
+            <input type="text" placeholder="año publicación" #anyoPublicacion />
+          </div>
+         
+          <div class="form-group col-md-4">
+            <label for="inputCodigo">Id:</label>
+            <input type="text" placeholder="eliminar" #_id />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputCodigo">Id:</label>
+            <input type="text" placeholder="editar" #ide />
+          </div>
+          <div>
+            <button type="button" (click)="crear(titulo.value, interprete.value, anyoPublicacion.value)" class="btn btn-success mb-2">Añadir Disco</button>
+            
+            <button type="button" (click)="eliminarDisco(_id.value)" class="btn btn-success mb-2">Eliminar Disco</button>
+            <button type="button" (click)="actualizarDisco(titulo.value, interprete.value, anyoPublicacion.value, ide.value)" class="btn btn-success mb-2">Editar Disco</button>
+          </div>
+        </div>
+    </form>
+</body>
+</html>
